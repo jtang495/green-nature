@@ -1,27 +1,59 @@
 
 {% extends 'reviews/base.html' %}
 {% load staticfiles %}
-<body>
+
 {% block title %}
 <!--<h2>Why Organic??</h2>-->
 {% endblock %}
 
 {% block content %}
+<body>
+    <div class="page-header">
 
-<div class="page-header">
+        <h3>We choose organic. Do you?</h3>
 
-     <h1><a href="//www.google.com" target="_blank">Link</a></h1>
     </div>
-    
-<div class="post">
-	<ul>
-      <li>Article1
-      <li>Article2
- 	</ul>
- </div>
 
- 
-{% endblock %}
+    <div class="post">
+
+        <div class="row">
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p class="m-b-0">If everybody switched to organic farming, we couldn't support the earth's current population - maybe half.</p>
+                    <footer class="blockquote-footer">Nina Federoff <cite title="Source Title">Lifehack</cite></footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p class="m-b-0">Every time you buy organic you're persuading more farmers to grow organic.</p>
+                    <footer class="blockquote-footer">Mother Earth News</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p class="m-b-0">Take care of your body. It's the only place you have to live in. Eat organic.</p>
+                    <footer class="blockquote-footer">humanresourcesblog</footer>
+                </blockquote>
+            </div>
+        </div>
+
+
+        <h2>Checkout:</h2>
+
+        <h4><a href="http://www.helpguide.org/articles/healthy-eating/organic-foods.htm" target="_blank">An Overview of Organic Foods from Helpguide.org</a></h4>
+        <h4><a href="http://www.nytimes.com/topic/subject/organic-foods-and-products" target="_blank">The New York Times's Articles on Organic Products</a></h4>
+        <h4><a href="http://www.naturalnews.com/organic_food.html" target="_blank">Latest News on Organic Farming</a></h4>
+        
+
+    </div>
+    <div class="plantbg">
+
+        <h1>Love the stuff that you eat!</h1>
+
+    </div>
+
 </body>
+{% endblock %}
+
 
 

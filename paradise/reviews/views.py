@@ -59,3 +59,7 @@ def faq_detail(request):
 def why_detail(request):
     context = {'why_detail':why_detail}
     return render(request, 'reviews/why_detail.html', context)
+
+def home(request):
+    context = {'home':home}
+    return render(request, 'reviews/home.html', context)

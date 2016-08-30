@@ -1,15 +1,18 @@
 {% extends 'reviews/base.html' %}
 
 {% block title %}
-<h2>Latest reviews</h2>
 {% endblock %}
+
+<div class="page-header">
+      <h3>Home</h3>
+    </div>
 
 {% block content %}
     <div class="container-fluid">
 {% if latest_review_list %}
 <div>
     {% for review in latest_review_list %}
-    <div>
+    <div class="col-md-3">
         <h4><a href="{% url 'reviews:review_detail' review.id %}">
         {{ review.wine.name }}
         </a></h4>
