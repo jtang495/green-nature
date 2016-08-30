@@ -3,10 +3,14 @@ from __future__ import unicode_literals
 from django.db import models
 import numpy as np
 
-
+def upload_location(obj, filename):
+    return "%s/%s" %(obj.id, filename)
+    
 class Wine(models.Model):
     name = models.CharField(max_length=200)
-
+    image = models.ImageField(upload_to = upload_location, null=True, blank=True, width_field="width_field", height_field="height_field")
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
     def average_rating(self):
         all_ratings = map(lambda x: x.rating, self.review_set.all())
         return np.mean(all_ratings)

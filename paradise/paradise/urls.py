@@ -29,4 +29,4 @@ if settings.DEBUG:
     url(r'^', include('reviews.urls')),
     url(r'^reviews/', include('reviews.urls', namespace="reviews")),
     url(r'^admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

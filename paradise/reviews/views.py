@@ -63,3 +63,4 @@ def why_detail(request):
 def home(request):
     context = {'home':home}
     return render(request, 'reviews/home.html', context)
+
