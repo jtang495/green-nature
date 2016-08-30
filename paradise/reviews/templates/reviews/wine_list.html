@@ -12,9 +12,12 @@
 
 <div class="container-fluid">
 {% if wine_list %}
-<div>
+<div class="row">
     {% for wine in wine_list %}
-    <div>
+    <div class="col-md-3">
+        {% if wine.image %}
+        <img src='{{ wine.image.url }}' class='img-responsive' />
+        {% endif %}
         <h4><a href="{% url 'reviews:wine_detail' wine.id %}">
         {{ wine.name }}
         </a></h4>
@@ -22,6 +25,7 @@
         <h5>{{ wine.average_rating | floatformat}} average rating</h5>
     </div>
     {% endfor %}
+    
 </div>
 {% else %}
     <p>No wines are available.</p>

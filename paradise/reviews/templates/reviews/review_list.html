@@ -10,7 +10,7 @@
 {% block content %}
     <div class="container-fluid">
 {% if latest_review_list %}
-<div>
+<div class="row">
     {% for review in latest_review_list %}
     <div class="col-md-3">
         <h4><a href="{% url 'reviews:review_detail' review.id %}">
