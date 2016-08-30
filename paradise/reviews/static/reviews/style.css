@@ -4,7 +4,7 @@
 /
 
 body {
-
+    
     font-family: Raleway;
     font-size: 17px;
 }
@@ -32,7 +32,7 @@ body {
 #nav ul li {
     display: inline-block;
     font-family: Raleway;
-    font-size: 17px;
+    font-size: 14px;
     
 }
 #nav ul li:hover {
@@ -67,11 +67,22 @@ body {
 }
 */
 
+.post{
+    padding-left: 50px;
+    padding-bottom: 50px;
+/*    align-content: center;*/
+    
+}
+
 .container-fluid {
     padding-top: 20px;
     border: 5px;
-    margin-top: 60px;
-    float: left
+    margin-left: 0px;
+    float: left;
+}
+
+.container-fluid .page-header {
+    margin-left: 0px;
 }
 
 .spacer
@@ -86,28 +97,41 @@ li a {
 
 h1 a {
     color: indianred;
-    font-family: 'Lobster';
+    font-family: 'Raleway';
 }
 
-body {
-    padding-left: 0px;
+.plantbg {
+    width: 100%;
+    height: 500px;
+    float: right;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 50px;
+    text-shadow: 1px 1px black;
+    background-image: url(image/plantpaintbg.png);
+    background-size: cover;
+     
 }
-
-body {
-    background: white url("images/background.JPG") no-repeat right bottom;
-}
-
 
 
 .page-header {
-    background-color: #D8A7CA;
+    background-color: #0066cc;
     margin-top: 40px;
+    height: auto;
     padding: 20px 20px 20px 20px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
+    
+    text-decoration: none;
+}
+
+.page-header h3, .page-header h3 a, .page-header h3 a:visited, .page-header h3 a:active {
+    color: #ffffff;
+    font-size: 20pt;
+    
     text-decoration: none;
 }
 
@@ -116,7 +140,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Raleway';
 }
 
 
