@@ -74,7 +74,23 @@ body {
 }
 
 .container-fluid {
+    font-family: Raleway;
+    font-size: 14px;
 
+}
+/* Fix!! Instance-by-instance naming of styling sheets */
+.container-product {
+    padding-left: 50px;
+    font-family: Raleway;
+    font-size: 14px;
+}
+
+.product-wrap {
+    padding-left: 15px;
+}
+
+.review-detail{
+    margin-top: 50px;
     font-family: Raleway;
     font-size: 14px;
 
@@ -144,6 +160,7 @@ h1 a {
     text-shadow: 1px 1px black;
     background-image: url(image/plantpaintbg.png);
     background-size: cover;
+    margin-bottom: 50px;
      
 }
 
@@ -332,4 +349,5 @@ hr { /* CSS Styling for a single line page divider */
     padding-left: 0;
   }
 }
+
 
