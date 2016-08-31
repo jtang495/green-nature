@@ -8,6 +8,11 @@ class ReviewAdmin(admin.ModelAdmin):
     list_filter = ['pub_date', 'user_name']
     search_fields = ['comment']
 
+class AnnouncementAdmin(admin.ModelAdmin):
+    model = Announcement
+    list_display = ('title', 'pub_date')
+    list_filter = ['pub_date']
+
 admin.site.register(Wine)
-admin.site.register(Announcement)
+admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Review, ReviewAdmin)

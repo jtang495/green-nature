@@ -10,10 +10,10 @@ class ReviewForm(ModelForm):
         }
 
 
-class ProductForm(ModelForm):
-    class Meta:
-        model = Wine
-        fields = ["image"]
+#class ProductForm(ModelForm):
+#    class Meta:
+#        model = Wine
+#        fields = ["image"]
         
 #class AnnouncementForm(ModelForm):
 #    class Meta:

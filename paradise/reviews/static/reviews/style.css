@@ -178,7 +178,7 @@ h1, h2, h3, h4 {
 .bs-callout-success {
     border-left-color: #5cb85c;
 }
-.bs-callout-success h4 {
+.bs-callout-success h1, .bs-callout-success h2, .bs-callout-success h3, .bs-callout-success h4 {
     color: #5cb85c;
 }
 .bs-callout-danger {
