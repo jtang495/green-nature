@@ -15,16 +15,16 @@
 <div class="container-fluid">
 <div class="row">
 <div class="page-header">
-    <h2>{{ wine.name }}</h2>
-    <h5>{{ wine.review_set.count }} reviews ({{ wine.average_rating | floatformat }} average rating)</h5>
+    <h2>{{ product.name }}</h2>
+    <h5>{{ product.review_set.count }} reviews ({{ product.average_rating | floatformat }} average rating)</h5>
 </div>
     </div>
 <div class="row">
 <h3>Recent reviews</h3>
     </div>
 <div class="row">
-{% if wine.review_set.all %}
-    {% for review in wine.review_set.all %}
+{% if product.review_set.all %}
+    {% for review in product.review_set.all %}
     <div>
         <em>{{ review.comment }}</em>
         <h6>Rated {{ review.rating }} of 5 by {{ review.user_name }}</h6>
@@ -34,14 +34,14 @@
     </div>
     {% endfor %}
 {% else %}
-<p>No reviews for this wine yet</p>
+<p>No reviews for this product yet</p>
 {% endif %}
 </div>
 
 <h3>Add your review</h3>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'reviews:add_review' wine.id %}" method="post" class="form">
+<form action="{% url 'reviews:add_review' product.id %}" method="post" class="form">
     {% csrf_token %}
     {% for field in form %}
     {% bootstrap_field field %}

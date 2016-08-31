@@ -6,7 +6,7 @@ import numpy as np
 def upload_location(obj, filename):
     return "%s/%s" %(obj.id, filename)
     
-class Wine(models.Model):
+class Product(models.Model):
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to = upload_location, null=True, blank=True, width_field="width_field", height_field="height_field")
     height_field = models.IntegerField(default=0)
@@ -36,7 +36,7 @@ class Review(models.Model):
         (4, '4'),
         (5, '5'),
     )
-    wine = models.ForeignKey(Wine)
+    product = models.ForeignKey(Product)
     pub_date = models.DateTimeField('date published')
     user_name = models.CharField(max_length=100)
     comment = models.CharField(max_length=200)
