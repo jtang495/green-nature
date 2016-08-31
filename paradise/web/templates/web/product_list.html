@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="page-header">
-      <h3>Reviews</h3>
+      <h3>Our Products</h3>
     </div>
 
 <div class="container-fluid">
@@ -16,7 +16,9 @@
     {% for product in product_list %}
     <div class="col-md-3">
         {% if product.image %}
-        <img src='{{ product.image.url }}' class='img-responsive' />
+        <a href="#" class="thumbnail">
+      <img src='{{ product.image.url }}' class='img-responsive'  alt="...">
+    </a>
         {% endif %}
         <h4><a href="{% url 'web:product_detail' product.id %}">
         {{ product.name }}
