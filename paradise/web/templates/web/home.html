@@ -1,0 +1,83 @@
+
+{% extends 'web/base.html' %}
+
+{% load static %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+<!--
+<div class="page-header">
+      <h3>Home</h3>
+    </div>
+-->
+
+<div class="home_container">
+    <div class="home_banner">
+        <div class="home_text">
+    <h2><strong>Welcome to Green Nature Farm</strong></h2>
+    <h1>A family-friendly farm based in Frederick County, Maryland</h1>
+        </div>
+    </div> 
+</div>
+
+<div class="page-header">
+      <h3>Announcements</h3>
+    </div>
+
+<div class="container-fluid">
+
+{% if announcement_list %}
+    {% for announcement in announcement_list %}
+    <div class="row">
+<!--        <div class="col-md-9">-->
+        <div class="bs-callout bs-callout-blog">
+
+            <h2>{{ announcement.title }}</h2>
+            <p>{{ announcement.content|safe }}</p>
+            <h5>{{ announcement.pub_date }}</h5>
+
+<!--        </div>-->
+        </div>
+    </div>
+    <div class="row">
+        <!-- Very cumbersome manual implementation of files. For future implement new image model -->
+        {% if announcement.image1 %}
+            <div class="col-md-3">
+        <a href="#" class="thumbnail">
+        <img src='{{ announcement.image1.url }}' class='img-responsive' /></a>
+            </div>
+        {% endif %}
+        {% if announcement.image2 %}
+            <div class="col-md-3">
+        <a href="#" class="thumbnail">
+        <img src='{{ announcement.image2.url }}' class='img-responsive' /></a>
+            </div>
+        {% endif %}
+        {% if announcement.image3 %}
+            <div class="col-md-3">
+        <a href="#" class="thumbnail">
+        <img src='{{ announcement.image3.url }}' class='img-responsive' /></a>
+            </div>
+        {% endif %}
+        {% if announcement.image4 %}
+            <div class="col-md-3">
+        <a href="#" class="thumbnail">
+        <img src='{{ announcement.image4.url }}' class='img-responsive' /></a>
+            </div>
+        {% endif %}
+    </div>
+    
+    <hr>
+    {% endfor %}
+    
+
+    
+{% endif %}
+
+
+</div>
+
+{% endblock %}
