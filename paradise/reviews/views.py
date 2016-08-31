@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from .models import Review, Wine
+from .models import Review, Wine, Announcement
 from .forms import ReviewForm
 import datetime
 
@@ -61,6 +61,7 @@ def why_detail(request):
     return render(request, 'reviews/why_detail.html', context)
 
 def home(request):
-    context = {'home':home}
+    announcement_list = Announcement.objects.order_by('-pub_date')[:9]
+    context = {'announcement_list':announcement_list}
     return render(request, 'reviews/home.html', context)
 

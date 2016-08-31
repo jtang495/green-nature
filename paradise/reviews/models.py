@@ -18,6 +18,15 @@ class Wine(models.Model):
     def __unicode__(self):
         return self.name
 
+class Announcement(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    pub_date = models.DateTimeField('date published')
+    image1 = models.ImageField(upload_to = upload_location, null=True, blank=True) 
+    image2 = models.ImageField(upload_to = upload_location, null=True, blank=True) 
+    image3 = models.ImageField(upload_to = upload_location, null=True, blank=True) 
+
+
 
 class Review(models.Model):
     RATING_CHOICES = (

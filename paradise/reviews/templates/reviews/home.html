@@ -13,6 +13,22 @@
     </div>
 
 <div class="container-fluid">
+    
+{% if announcement_list %}
+<div class="row">
+    {% for announcement in announcement_list %}
+        {% if announcement.image1 %}
+        <img src='{{ announcement.image1.url }}' class='img-responsive' />
+        {% endif %}
+        <h3>{{ announcement.title }}</h3>
+        <p>{{ announcement.content }}</p>
+        <h5>{{ announcement.pub_date }}</h5>
+
+    {% endfor %}
+    
+</div>
+    
+{% endif %}
 
     
     
