@@ -1,0 +1,13 @@
+{% extends 'web/base.html' %}
+
+<div class="container-fluid">
+{% block title %}
+<h2><a href="{% url 'web:product_detail' review.product.id %}">{{ review.product.name }}</a></h2>
+{% endblock %}
+
+{% block content %}
+<h4>Rated {{ review.rating }} of 5 by {{ review.user_name }}</h4>
+<p>{{ review.pub_date }}</p>
+<p>{{ review.comment }}</p>
+{% endblock %}
+</div>
