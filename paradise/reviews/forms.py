@@ -1,5 +1,5 @@
 from django.forms import ModelForm, Textarea
-from reviews.models import Review, Wine
+from reviews.models import Review
 
 class ReviewForm(ModelForm):
     class Meta:
@@ -10,7 +10,15 @@ class ReviewForm(ModelForm):
         }
 
 
-class ProductForm(ModelForm):
-    class Meta:
-        model = Wine
-        fields = ["image"]
+#class ProductForm(ModelForm):
+#    class Meta:
+#        model = Wine
+#        fields = ["image"]
+        
+#class AnnouncementForm(ModelForm):
+#    class Meta:
+#        model = Announcement
+#        fields = ["image1"]
+# 
+        
+    
