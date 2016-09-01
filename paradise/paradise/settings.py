@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'web',
     'tinymce',
+    'storages',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -121,16 +122,42 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    #'/var/www/static/',
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+#    #'/var/www/static/',
+#]
+#
+#STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-MEDIA_URL  = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-                           
+AWS_STORAGE_BUCKET_NAME = 'greennaturefiles'
+AWS_ACCESS_KEY_ID = 'AKIAIIM55VCJ4LS7S5EA'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_S3_HOST = "s3-us-west-2.amazonaws.com"
+# Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+    # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+    # This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+    # We also use it in the next setting.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+    # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
+    # refers directly to STATIC_URL. So it's safest to always set it.
+#STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+    # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
+    # you run `collectstatic`).
+#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+#
+#MEDIA_URL  = '/media/'
+#MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
+
+                       
