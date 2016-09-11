@@ -33,9 +33,27 @@
         <em><h4>{{ product.description }}</h4></em>
     </div>
     {% endif %}
-    
-        
     </div>
+    
+    <div class="product-wrap">
+    <div class="row">
+        <h3>Helpful Links</h3>
+    </div>
+    {% if product.link1_title %}
+        {% if product.link1_link %}
+        <h4><a href="{{product.link1_link}}" target="_top">{{product.link1_title}}</a></h4>
+        {% endif %} 
+    {% endif %} 
+        <br>
+<!--
+    {% if product.link2_title %}
+        {% if product.link2_link %}
+        <h4><a href="{{product.link2_link}}" target="_top">{{product.link2_title}}</a></h4>
+        {% endif %} 
+    {% endif %}   
+-->
+    </div>
+    
     
     <div class="product-wrap">
     <div class="row">

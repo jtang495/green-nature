@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^product/(?P<product_id>[0-9]+)/add_review/$', views.add_review, name='add_review'),
     # ex: /about/
     url(r'^about$', views.about_detail, name='about_detail'),
+    url(r'^contact$', views.contact_detail, name='contact_detail'),
     url(r'^why$', views.why_detail, name='why_detail'),
     url(r'^faq$', views.faq_detail, name='faq_detail'),
 

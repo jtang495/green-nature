@@ -10,9 +10,12 @@ def upload_location(obj, filename):
 class Product(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField(default="")
-    image = models.ImageField(upload_to = upload_location, null=True, blank=True, width_field="width_field", height_field="height_field")
-    height_field = models.IntegerField(default=0)
-    width_field = models.IntegerField(default=0)
+    image = models.ImageField(upload_to = upload_location, null=True, blank=True)
+    link1_title = models.CharField(max_length=100)
+    link1_link = models.CharField(max_length=200, help_text="Make sure the link starts with 'https://'")
+    link2_title = models.CharField(max_length=200)
+    link2_link = models.CharField(max_length=200, help_text="Make sure the link starts with 'https://'")
+#    link2_link = models.CharField(max_length=200, help_text="Make sure the link starts with 'https://'")
     def average_rating(self):
         all_ratings = map(lambda x: x.rating, self.review_set.all())
         return np.mean(all_ratings)
