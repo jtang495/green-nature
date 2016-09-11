@@ -61,6 +61,10 @@ def why_detail(request):
     context = {'why_detail':why_detail}
     return render(request, 'web/why_detail.html', context)
 
+def contact_detail(request):
+    context = {'why_detail':why_detail}
+    return render(request, 'web/contact_detail.html', context)
+
 def home(request):
     announcement_list = Announcement.objects.order_by('-pub_date')[:9]
     context = {'announcement_list':announcement_list}
