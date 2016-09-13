@@ -70,3 +70,4 @@ def home(request):
     context = {'announcement_list':announcement_list}
     return render(request, 'web/home.html', context)
 
+

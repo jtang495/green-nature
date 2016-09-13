@@ -7,5 +7,6 @@ django-tinymce==2.4.0
 gunicorn==19.6.0
 numpy==1.11.1
 Pillow==3.3.1
+psycopg2==2.6.2
 virtualenv==15.0.3
 whitenoise==3.2.1

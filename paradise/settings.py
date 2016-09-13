@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-
+import psycopg2
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -80,10 +80,27 @@ WSGI_APPLICATION = 'paradise.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'd36kctb8h6frh5',                      # Or path to database file if using sqlite3.
+            # The following settings are not used with sqlite3:
+        'USER': 'bkbzywchlfsznp',
+        'PASSWORD': 'GNq9Grtbppm4vXJUDnWnjZUlFg',
+        'HOST': 'ec2-23-21-238-76.compute-1.amazonaws.com',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+        'PORT': '5432',                      # Set to empty string for default.
     }
 }
+#DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#            'NAME': 'mydb',                      # Or path to database file if using sqlite3.
+#            # The following settings are not used with sqlite3:
+#            'USER': 'myuser',
+#            'PASSWORD': 'password',
+#            'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
+#            'PORT': '',                      # Set to empty string for default.
+#        }
+#    }
+
 
 
 # Password validation
@@ -163,4 +180,7 @@ MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 #MEDIA_URL  = '/media/'
 #MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
 
+
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()
                        

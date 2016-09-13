@@ -15,14 +15,14 @@ class Product(models.Model):
     link1_link = models.CharField(max_length=200, blank=True, help_text="Make sure the link starts with 'https://'")
     link2_title = models.CharField(max_length=200, blank=True)
     link2_link = models.CharField(max_length=200, blank=True, help_text="Make sure the link starts with 'https://'")
-#    link2_link = models.CharField(max_length=200, help_text="Make sure the link starts with 'https://'")
+
     def average_rating(self):
         all_ratings = map(lambda x: x.rating, self.review_set.all())
         return np.mean(all_ratings)
 
     def __unicode__(self):
         return self.name
-
+#
 class Announcement(models.Model):
     title = models.CharField(max_length=200)
     content = tinymce_models.HTMLField()
@@ -32,7 +32,8 @@ class Announcement(models.Model):
     image3 = models.ImageField(upload_to = upload_location, null=True, blank=True) 
     image4 = models.ImageField(upload_to = upload_location, null=True, blank=True) 
 
-
+class Test(models.Model):
+    name = models.CharField(max_length=100)
 class Review(models.Model):
     RATING_CHOICES = (
         (1, '1'),
